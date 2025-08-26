@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lobeira - Branding com Alma</title>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;700&family=Underscript&display=swap" rel="stylesheet">
+
+<style>
+* { 
+  margin:0; 
+  padding:0; 
+  box-sizing:border-box; 
+}
+
+body { 
+  font-family:'Clash Display', sans-serif; 
+  background-color:#F7F2DC; 
+  color:#2A5613; 
+  line-height:1.6; 
+}
+
+a { 
+  text-decoration:none; 
+  color:#fff; 
+}
+
+.cta-btn, .cta-btn-footer { 
+  display:inline-block; 
+  padding:15px 30px; 
+  background-color:#F68437; 
+  border-radius:8px; 
+  font-weight:bold; 
+  transition:0.3s; 
+}
+
+.cta-btn:hover, .cta-btn-footer:hover { 
+  opacity:0.85; 
+}
+
+@keyframes float {
+  0%,100% {transform:translateY(0);}
+  50% {transform:translateY(-6px);}
+}
+
+section { 
+  padding:60px 20px; 
+  text-align:center; 
+  background-color:#F7F2DC; /* fundo bege uniforme */
+}
+
+/* Textura apenas para destaque */
+.textura {
+  position: relative;
+  background-color: #F7F2DC; /* fundo bege */
+}
+
+/* Camada de textura leve */
+.textura::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('textura.png'); /* caminho da textura */
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  opacity: 0.1; /* deixa bem leve */
+  pointer-events: none; /* não atrapalha cliques */
+  z-index: 0;
+}
+
+/* Conteúdo da seção acima da textura */
+.textura > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+.textura h{ 
+  background-image: url('textura.png'); /* Substitua pelo caminho da textura */
+  background-repeat: no-repeat;
+  background-position: center top;
+  opacity: 0.1;
+  background-size: cover;
+}
+
+.ajuda-content { 
+  display:flex; 
+  justify-content:center; 
+  align-items:center; 
+  gap:40px; 
+  max-width:1200px; 
+  margin:0 auto; 
+  flex-wrap:wrap; 
+}
+
+.hero-content {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  gap: 40px; 
+  flex-wrap: wrap; 
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero .logo {
+  max-width: 400px; 
+  height: auto;
+  flex-shrink: 0; 
+}
+
+.hero-text {
+  max-width: 600px;
+  text-align: left; 
+}
+
+.headline { 
+  font-family:'Underscript', cursive; 
+  font-size:2.5rem; 
+  margin-bottom:20px; 
+}
+
+.headline .underscore { 
+  border-bottom:4px solid #F68437; 
+}
+
+.subtext { 
+  font-size:1.2rem; 
+  margin-bottom:30px; 
+}
+
+.problema-icons, .servicos-grid, .depoimentos-grid { 
+  display:flex; 
+  flex-wrap:wrap; 
+  justify-content:center; 
+  gap:20px; 
+  margin-top:30px; 
+}
+
+.problema-icons div, .servico-card { 
+  background:#fff; 
+  padding:20px; 
+  border-radius:12px; 
+  font-weight:bold; 
+  min-width:220px; 
+  transition:0.3s; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.servico-card:hover { 
+  transform:translateY(-5px); 
+}
+
+.depoimentos-grid img { 
+  max-width:300px; 
+  border-radius:12px; 
+}
+
+.filosofia { 
+  font-style:italic; 
+  font-size:1.2rem;
+}
+
+.ajuda-content .texto { 
+  max-width:500px; 
+  text-align:left; 
+}
+
+.ajuda-content .imagem img { 
+  max-width:400px; 
+  border-radius:12px; 
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.footer-fixo { 
+  position:fixed; 
+  bottom:0; 
+  width:100%; 
+  background-color:#2A5613; 
+  color:#fff; 
+  padding:15px 20px; 
+  font-weight:bold; 
+  display:flex; 
+  justify-content:center; 
+  align-items:center; 
+  gap:20px; 
+  box-shadow:0 -4px 12px rgba(0,0,0,0.3); 
+}
+
+@media(max-width:768px){
+  .hero-content, .ajuda-content { 
+    flex-direction:column; 
+    text-align:center; 
+    gap:20px; 
+  }
+  .hero .logo { 
+    max-width:200px; 
+  }
+  .footer-fixo { 
+    flex-direction:column; 
+    gap:10px; 
+    text-align:center; 
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero textura">
+<div class="hero-content">
+<img src="logo.png" alt="Logo Lobeira" class="logo">
+<div class="hero-text">
+<h1 class="headline">Você pode virar esse jogo <span class="underscore">com estratégia e profundidade</span></h1>
+<p class="subtext">Com alguém do seu lado, sua marca pode ser incrível e única. Mas se ninguém enxergar isso — ela não vende.</p>
+</div>
+</div>
+</section>
+
+<!-- Problema / Dor -->
+<section class="problema">
+<div style="margin-top:20px;">
+<a href="https://wa.me/5511999999999" class="cta-btn">🧡 Quero conversar</a>
+</div>
+<div style="margin-top:20px;">
+<p>Falar com todo mundo = não conectar com ninguém.</p>
+<p>Só existe venda com conexão. E só existe conexão com verdade.</p>
+<p>Se sua marca não comunica com verdade, ela não vende.</p>
+</div>
+<div class="problema-icons">
+<div>👥 Time que mergulha no seu universo</div>
+<div>⏱️ Entrega rápida, processo profundo</div>
+<div>📉 Enquanto você posta por postar, seus concorrentes vendem</div>
+</div>
+</section>
+
+<!-- Serviços -->
+<section class="servicos textura">
+<h2>🎯 O que oferecemos</h2>
+<div class="servicos-grid">
+<div class="servico-card">🔸 Branding Estratégico</div>
+<div class="servico-card">🔸 Consultoria com Visão de Negócio</div>
+<div class="servico-card">🔸 Gestão de Mídias Sociais com Presença</div>
+<div class="servico-card">🔸 Produção Audiovisual com Significado</div>
+<div class="servico-card">🔸 Tráfego Pago com Propósito</div>
+</div>
+<a href="https://wa.me/5511999999999" class="cta-btn" style="margin-top:30px;">Quero conhecer mais os serviços e valores</a>
+</section>
+
+<!-- Resultados / Depoimentos -->
+<section class="resultados">
+<h2>Resultados que falam pela nossa marca</h2>
+<ul style="list-style:none; margin-bottom:40px;">
+<li>Mais de R$65.000 faturados com apenas R$1.000 em anúncios</li>
+<li>Clientes que elogiam estética, sensibilidade e conversão</li>
+<li>Processo transparente, taxa de refação quase zero</li>
+<li>Time com influenciadora, ilustradora e estrategista experientes</li>
+</ul>
+<div class="depoimentos-grid">
+<img src="antes-depois1.png" alt="Antes/Depois">
+<img src="antes-depois2.png" alt="Antes/Depois">
+<img src="depoimento1.png" alt="Feedback cliente">
+</div>
+</section>
+
+<!-- Filosofia -->
+<section class="filosofia textura">
+<p>Diferente não é só a estética. É o processo. É a entrega. É o resultado.</p>
+<p>Sem estratégia, sem essência, sem alma? 📉 As vendas caem. 📉 O cliente some. 📉 O negócio trava.</p>
+</section>
+
+<!-- Como ajuda -->
+<section class="como-ajuda">
+<div class="ajuda-content">
+<div class="texto">
+<h2>Como a Lobeira pode ajudar sua marca</h2>
+<p>Na Lobeira, criamos para o que permanece. Para marcas que querem crescer com raízes, presença e significado hoje e no futuro.</p>
+<ul>
+<li>✨ Branding com alma e estratégia: marcas memoráveis com propósito</li>
+<li>🗣️ Tom de voz autêntico: mensagens que conectam</li>
+<li>🎨 Identidade visual com verdade: designs autorais e estética que expressa sua essência</li>
+<li>💡 Conteúdo que conecta de verdade: atraímos quem acredita no que você acredita</li>
+</ul>
+<blockquote>“Cultivamos marcas vivas que crescem com propósito e coragem.”</blockquote>
+</div>
+<div class="imagem">
+<img src="lobo.png" alt="Time Lobeira">
+</div>
+</div>
+</section>
+
+<!-- CTA Final -->
+<section class="cta-final textura">
+<h2>E se a sua marca deixasse de ser só mais uma e virasse uma causa viva, com raízes e asas?</h2>
+<h2>Vamos conversar. Essa consultoria gratuita pode ser o início de tudo.</h2>
+<a href="https://wa.me/5562997013854" class="cta-btn-footer">Quero conversar</a>
+</section>
+
+<div class="footer-fixo">
+<p>🧡 Somos raiz e flor. Somos presença e potência. Somos Lobeira!🧡</p>
+</div>
+
+</body>
+</html>
