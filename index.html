@@ -1,300 +1,439 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Lobeira - Branding com Alma</title>
-<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;700&family=Underscript&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;600;700&family=Inter:wght@300;400;600&family=Underscript&display=swap" rel="stylesheet">
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
+  /* ========= Reset & Base ========= */
+  *{ margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+  html,body{ height:100%; width: 100%;font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#21311f; background:#F7F2DC; }
+  img{ max-width:100%; display:block; }
 
-body {
-  font-family:'Clash Display', sans-serif;
-  background: linear-gradient(135deg, #2A5613 0%, #7AC142 50%, #F68437 100%);
-  color:#2A5613;
-  line-height:1.6;
-  overflow-x:hidden;
-  padding-bottom:180px;
-  text-align:center;
-}
-
-a { text-decoration:none; color:#fff; }
-.cta-btn, .cta-btn-footer {
-  display:inline-block;
-  padding:15px 35px;
-  border-radius:12px;
-  font-weight:bold;
-  background-color:#F68437;
-  transition:0.3s ease;
-}
-.cta-btn:hover, .cta-btn-footer:hover { transform:scale(1.05); }
-
-section {
-  max-width:1100px;
-  margin:60px auto;
-  padding:60px 20px;
-  border-radius:20px;
-  text-align:center;
-  background:#fff; /* fundo branco clean */
-  box-shadow:0 15px 40px rgba(0,0,0,0.15);
-  transition: all 0.5s ease;
-}
-section h2 { margin-bottom:25px; font-size:2rem; color:#2A5613; }
-
-.hero { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:40px; }
-.hero img { max-width:400px; border-radius:20px; transition:0.5s ease; }
-.hero img:hover { transform:scale(1.03); }
-.hero-text { max-width:600px; }
-.headline { font-family:'Underscript', cursive; font-size:3rem; line-height:1.2; margin-bottom:15px; }
-.headline .underscore { border-bottom:4px solid #F68437; }
-.subtext { font-size:1.2rem; color:#2A5613; }
-
-.problema p { margin:10px 0; font-weight:500; color:#2A5613; }
-.problema-icons { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:30px; }
-.problema-icons div {
-  background: #fff; /* cards totalmente brancos */
-  padding:18px;
-  border-radius:15px;
-  min-width:200px;
-  transition:0.3s ease;
-  font-weight:500;
-  box-shadow:0 15px 40px rgba(0,0,0,0.1); /* sombra suave */
-}
-.problema-icons div:hover { transform:scale(1.03); }
-
-.servicos-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; margin-top:30px; }
-.servico-card { background: #fff; padding:25px; border-radius:15px; font-weight:500; transition:0.3s ease; box-shadow:0 15px 40px rgba(0,0,0,0.1); }
-.servico-card:hover { transform:scale(1.04); }
-
-.depoimentos-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:30px; }
-.depoimentos-grid img { max-width:280px; border-radius:15px; transition:0.5s ease; }
-.depoimentos-grid img:hover { transform:scale(1.03); }
-
-.filosofia { font-style:italic; font-size:1.2rem; max-width:750px; margin:0 auto; color:#2A5613; }
-
-.ajuda-content { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:40px; max-width:1200px; margin:0 auto; }
-.ajuda-content .texto { max-width:600px; text-align:left; }
-.ajuda-content .imagem img { max-width:500px; border-radius:20px; }
-
-.cta-final {
-  background: #fff; /* fundo branco clean */
-  color: #2A5613;   /* texto escuro para contraste */
-  padding: 60px 20px;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-}
-.cta-btn-footer {
-  background-color:#F68437; /* botão destacado */
-  color: #fff;
-}
-
-.cta-final .social-icons {
-  margin-top:30px;
-  display:flex;
-  justify-content:center;
-  gap:20px;
-}
-.cta-final .social-icons img {
-  width:36px;
-  height:36px;
-  filter:invert(1);
-  transition:0.3s ease;
-}
-.cta-final .social-icons img:hover { transform:scale(1.2); }
-
-/* Footer fixo */
-.footer-fixo {
+  /* ========= Global background (ramificação + gradiente) ========= */
+ body::before {
+  content:"";
   position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: rgba(42,86,19,0.95);
-  color: #fff;
-  padding: 20px;
-  font-weight: bold;
+  top:0; left:0;
+  width:100vw;
+  height:100vh;
+  background:
+    url('ramificacao1.jpg') center/cover no-repeat,
+    linear-gradient(135deg, rgba(138,64,204,0.18), rgba(42,86,19,0.12));
+  background-blend-mode: overlay;
+  z-index:-3;
+  pointer-events:none;
+  opacity:0.2;
+}
+
+  body::after{
+    content:"L O B E I R A";
+    position:fixed;
+    left:50%; top:18%;
+    transform:translateX(-50%) rotate(-10deg);
+    font-family:'Clash Display',sans-serif;
+    font-weight:700;
+    font-size:5rem;
+    color:#8A40CC;
+    opacity:0.06;
+    letter-spacing:14px;
+    z-index:-2; pointer-events:none;
+    white-space:nowrap;
+    top: 40%;
+  }
+
+  /* ========= HERO ========= */
+  .hero {
+  position: relative;
+  padding: 120px 100px; /* topo e base menores */
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
-  box-shadow: 0 -6px 20px rgba(0,0,0,0.3);
-  border-radius:15px 15px 0 0;
-  flex-wrap: wrap;
-  z-index: 999;
+  justify-content: center;
+  gap: 60px;
 }
 
-.footer-fixo p { display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap; }
-.social-icon { width:28px; height:28px; transition: transform 0.3s, opacity 0.3s; filter: brightness(1) invert(1); }
-.social-icon:hover { transform:scale(1.2); opacity:0.8; }
-
-/* Fade in */
-.fade-slide { opacity:0; transform:translateY(30px); transition:all 0.8s ease-out; }
-.fade-slide.show { opacity:1; transform:translateY(0); }
-
-@media(max-width:768px){
-  .hero { flex-direction:column; }
-  .hero img { max-width:280px; }
-  .ajuda-content { flex-direction:column; text-align:center; gap:30px; }
-  body { padding-bottom:220px; }
-}
-
-.servicos-grid {
+  .hero::after{
+    content:"";
+    position:absolute;
+    top:-60px; left:-60px;
+    width:220px; height:280px;
+    background: radial-gradient(circle at 70% 30%, #8ACC40 50%, transparent 75%);
+    border-radius: 0 60% 0 60%;
+    transform: rotate(-20deg); opacity:0.6; pointer-events:none; z-index:0;
+  }
+  .hero-branch{
+    position: absolute; bottom: -20px; right: -20px; width: 220px; height: 300px;
+    background: radial-gradient(circle at 30% 70%, #8ACC40 50%, transparent 75%);
+    border-radius: 50% 0 60% 0; transform: rotate(15deg); opacity: 0.65; pointer-events: none; z-index:0;
+  }
+  
+  .hero-inner {
+  max-width: 1400px;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
-  gap: 25px;
-  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 0 48px;
 }
 
-.servico-card {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  .hero-left{ max-width:640px; animation: fadeInLeft 1s ease forwards; }
+  .headline{
+    font-family:'Underscript', cursive; font-size:3.8rem; line-height:1.1; margin-bottom:20px;
+    background: linear-gradient(120deg,#8A40CC,#F68437); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero-sub{ font-size:1.2rem; color:#294021; margin-bottom:30px; }
+  .hero-cta a.cta-btn{
+    padding:20px 36px; border-radius:16px; font-weight:700; letter-spacing:0.4px;
+    box-shadow:0 16px 50px rgba(246,132,55,0.15); transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .hero-cta a.cta-btn:hover{
+    transform:translateY(-5px); box-shadow:0 26px 60px rgba(246,132,55,0.2);
+  }
+  .mockup{
+    width:400px; border-radius:28px; overflow:hidden; background: linear-gradient(145deg, #fff, #f9f6ff);
+    box-shadow: 0 35px 80px rgba(17,18,16,0.12), 0 0 60px rgba(138,64,204,0.18); padding:24px;
+    transition: transform .4s ease, box-shadow .4s ease;
+  }
+  .mockup:hover{
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 45px 100px rgba(17,18,16,0.15), 0 0 80px rgba(138,64,204,0.25);
+  }
+  @keyframes fadeInLeft{0%{opacity:0;transform:translateX(-40px);}100%{opacity:1;transform:translateX(0);}}
+
+  /* ========= Sections ========= */
+  .container{ max-width:1440px; margin:0 auto; padding:0 80px; }
+  section{ width:100%; padding: 60px 0; }
+  .section-inner{
+    max-width:1400px; margin:50 auto; padding:48px; border-radius:20px;
+    transition:transform .4s ease, box-shadow .4s ease;
+    box-shadow:0 10px 30px rgba(17,18,16,0.06); backdrop-filter: blur(6px);
+  }
+  .section-inner:focus{ outline:2px solid rgba(138,64,204,0.12); }
+  .section--neutral .section-inner{ background: rgba(255,255,255,0.92); }
+  .section--accent .section-inner{ background: linear-gradient(90deg,#3f2354 0%, #8A40CC 100%); color:#fff; }
+  .section--clean{ padding:0; }
+  .section--clean .section-inner{ background:transparent; padding:120px 48px; box-shadow:none; border-radius:0; }
+  .section-inner:hover{ transform: translateY(-6px); box-shadow:0 30px 60px rgba(17,18,16,0.09); }
+
+  h1,h2,h3{ font-family:'Clash Display', sans-serif; margin-bottom:12px; line-height:1.05; }
+  h1{ font-size:3.6rem; font-weight:700; letter-spacing:-1px; color:#0f2614; }
+  h1 .accent{ color:#8A40CC; }
+  h2{ font-size:2.6rem; font-weight:700; color:inherit; }
+  h2.lead{ font-size:1.05rem; font-weight:600; color:rgba(17,18,16,0.55); margin-bottom:24px; }
+  .heading-underline{ position:relative; display:inline-block; margin-top:6px; }
+  .heading-underline::after{ content:""; display:block; height:6px; width:84px; border-radius:6px; background:linear-gradient(90deg,#F68437,#8A40CC); margin-top:10px; opacity:.98; }
+
+  /* ========= Problemas ========= */
+  .problema p{ font-size:1.05rem; color: #21311f; margin-bottom:12px; font-weight:550; line-height:1.5; }
+  .problema-icons{ display:flex; gap:22px; flex-wrap:wrap; margin-top:28px; justify-content:center; }
+  .pill{ background:#fff; border-radius:18px; padding:20px 22px; min-width:220px; text-align:center; box-shadow:0 18px 40px rgba(17,18,16,0.06); font-weight:600; transition:transform .32s ease, box-shadow .32s ease; }
+  .pill:hover{ transform:translateY(-8px); box-shadow:0 28px 60px rgba(17,18,16,0.09); }
+
+  /* ========= Serviços ========= */
+  .servicos-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:30px; margin-top:26px; }
+  .servico-card{ background:linear-gradient(180deg,#ffffff,#fbf8ff); border-radius:28px; padding:36px 28px; min-height:200px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; text-align:center; box-shadow:0 18px 48px rgba(17,18,16,0.06); transition: transform .45s cubic-bezier(.2,.9,.2,1), box-shadow .45s; opacity:0; transform:translateY(24px); }
+  .servico-card.in-view{ opacity:1; transform:translateY(0); }
+  .servico-card .icon{ width:64px; height:64px; border-radius:14px; background:linear-gradient(180deg,#F6EAF7,#F3E6FF); display:flex; align-items:center; justify-content:center; margin-bottom:18px; font-size:28px; }
+  .servico-card h3{ font-size:1.05rem; margin-bottom:8px; color:#152914; }
+  .servico-card p{ color:rgba(17,18,16,0.6); font-size:0.95rem; line-height:1.45; }
+
+  /* ========= Depoimentos ========= */
+  .depoimentos-grid{ display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-top:22px; }
+  .depo-card{ background:#fff; border-radius:18px; padding:18px; width:280px; box-shadow:0 14px 40px rgba(17,18,16,0.06); }
+  .depo-card img{ border-radius:10px; margin-bottom:12px; }
+
+  /* ========= Filosofia ========= */
+  .filosofia p{ font-style:italic; color:#20321e; font-size:1.15rem; line-height:1.6; }
+
+  /* ========= Como ajuda ========= */
+  .ajuda-content{ display:grid; grid-template-columns: 1fr 420px; gap:36px; align-items:center; }
+  .ajuda-content ul{ list-style:none; padding-left:14px; line-height:1.8; font-weight:600; color:#21311f; }
+  .ajuda-content li::marker{ color:#8A40CC; }
+
+
+  /* ========= Footer ========= */
+  .footer-fixo{
+    position:fixed; bottom:0; left:0; width:100%; background: rgba(42, 86, 19, 0.95); color:#fff;
+    padding:16px 0; text-align:center; font-weight:600; box-shadow:0 -4px 20px rgba(17,18,16,0.18); z-index:999;
+  }
+
+  /* ========= Responsividade ========= */
+  @media(max-width:1100px){
+    .container{ padding:10px 40px; }
+    .hero-inner{ grid-template-columns:1fr; text-align:center; }
+    .hero-art{ order:-1; }
+    .ajuda-content{ grid-template-columns:1fr; }
+  }
+  @media(max-width:768px){
+    .container{ padding:0 20px; }
+    h1{ font-size:2.4rem; }
+    h2{ font-size:1.8rem; }
+    .servicos-grid{ grid-template-columns: 1fr; }
+    .eyebrow{ display:block; text-align:center; }
+    .section-inner{ padding:28px; border-radius:16px; }
+    .cta-btn{ width:100%; justify-content:center; }
+    .footer-fixo{ bottom:12px; padding:12px 16px; font-size:.95rem; }
+    .cta-final{ padding:60px 16px; }
+    .cta-final h2{ font-size:2.2rem; }
+    .cta-final p{ font-size:1rem; }
+    .cta-final .contact-links{ flex-direction:column; gap:16px; }
+  }
+
+  /* ========= Misc ========= */
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style-position:inside; }
+  blockquote{ border-left:4px solid rgba(138,64,204,0.18); padding-left:18px; color:#2b401f; margin-top:18px; font-style:italic; }
+
+  .cta-final {
+  background: linear-gradient(135deg, #8A40CC, #F68437);
+  color: #fff;
+  padding: 80px 5%;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.12);
+  overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.cta-final .cta-inner {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.cta-final h2 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cta-final p {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.95);
+  max-width: 700px;
+}
+
+.cta-final .cta-btn {
+  padding: 18px 36px;
+  border-radius: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  box-shadow: 0 14px 42px rgba(246,132,55,0.16);
+  background: #FF7F50;
+  color: #fff;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.cta-final .cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 60px rgba(246,132,55,0.22);
+}
+
+.cta-final .contact-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-final .contact-links a {
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 25px;
-  font-weight: 600;
-  transition: all 0.4s ease;
-  width: 100%;
-  max-width: 300px; /* garante mesmo tamanho */
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  transition: color .25s ease;
 }
 
-.servico-card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+.cta-final .contact-links a:hover {
+  color: #F68437;
 }
 
-/* Responsivo */
-@media(max-width:1024px){
-  .servicos-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.cta-final .contact-links i {
+  font-size: 1.2rem;
 }
-
+.site-wrapper { overflow-x: hidden; position: relative; z-index:0; padding-top :55px;}
+/* ===== Responsividade ===== */
 @media(max-width:768px){
-  .servicos-grid {
-    grid-template-columns: 1fr;
+  .cta-final {
+    padding: 60px 5%;
+    border-radius: 16px;
+  }
+  .cta-final h2 {
+    font-size: 2.2rem;
+  }
+  .cta-final p {
+    font-size: 1rem;
+  }
+  .cta-final .contact-links {
+    flex-direction: column;
+    gap: 16px;
   }
 }
-
-
+ 
 </style>
 </head>
 <body>
-
-<!-- Hero -->
-<section class="hero fade-slide">
-  <img src="logo.png" alt="Logo Lobeira">
-  <div class="hero-text">
-    <h1 class="headline">Você pode virar esse jogo <span class="underscore">com estratégia e profundidade</span></h1>
-    <p class="subtext">Com alguém do seu lado, sua marca pode ser incrível e única. Mas se ninguém enxergar isso — ela não vende.</p>
-    <a href="https://wa.me/5511999999999" class="cta-btn">🧡 Quero conversar</a>
-  </div>
-</section>
-
-<!-- Problemas -->
-<section class="problema fade-slide">
-  <p>Falar com todo mundo = não conectar com ninguém.</p>
-  <p>Só existe venda com conexão. E só existe conexão com verdade.</p>
-  <p>Se sua marca não comunica com verdade, ela não vende.</p>
-  <div class="problema-icons">
-    <div>👥 Time que mergulha no seu universo</div>
-    <div>⏱️ Entrega rápida, processo profundo</div>
-    <div>📉 Enquanto você posta por postar, seus concorrentes vendem</div>
-  </div>
-</section>
-
-<section class="servicos fade-slide">
-  <h2>🎯 O que oferecemos</h2>
-  <div class="servicos-grid">
-    <div class="servico-card">🔸 Branding Estratégico</div>
-    <div class="servico-card">🔸 Consultoria com Visão de Negócio</div>
-    <div class="servico-card">🔸 Gestão de Mídias Sociais com Presença</div>
-    <div class="servico-card">🔸 Produção Audiovisual com Significado</div>
-    <div class="servico-card">🔸 Tráfego Pago com Propósito</div>
-    <div class="servico-card">🔸 Suporte e Estratégia Contínua</div> <!-- novo card -->
-  </div>
-</section>
-
-
-<!-- Depoimentos -->
-<section class="resultados fade-slide">
-  <h2>Resultados que falam pela nossa marca</h2>
-  <ul style="list-style:none; max-width:750px; margin:0 auto 30px; text-align:left;">
-    <li>Mais de R$65.000 faturados com apenas R$1.000 em anúncios</li>
-    <li>Clientes que elogiam estética, sensibilidade e conversão</li>
-    <li>Processo transparente, taxa de refação quase zero</li>
-    <li>Time com influenciadora, ilustradora e estrategista experientes</li>
-  </ul>
-  <div class="depoimentos-grid">
-    <img src="antes-depois1.png" alt="Antes/Depois">
-    <img src="antes-depois2.png" alt="Antes/Depois">
-    <img src="depoimento1.png" alt="Feedback cliente">
-  </div>
-</section>
-
-<!-- Filosofia -->
-<section class="filosofia fade-slide">
-  <p>Diferente não é só a estética. É o processo. É a entrega. É o resultado.</p>
-  <p>Sem estratégia, sem essência, sem alma? 📉 As vendas caem. 📉 O cliente some. 📉 O negócio trava.</p>
-</section>
-
-<!-- Como ajuda -->
-<section class="como-ajuda fade-slide">
-  <div class="ajuda-content" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:30px; max-width:1200px; margin:0 auto;">
-    
-    <!-- Texto à esquerda -->
-    <div class="texto" style="flex:1; min-width:280px; text-align:left;">
-      <h2>Como a Lobeira pode ajudar sua marca</h2>
-      <ul style="padding-left:20px; line-height:1.6; font-weight:500;">
-        <li>✨ Branding com alma e estratégia: marcas memoráveis com propósito</li>
-        <li>🗣️ Tom de voz autêntico: mensagens que conectam</li>
-        <li>🎨 Identidade visual com verdade: designs autorais e estética que expressa sua essência</li>
-        <li>💡 Conteúdo que conecta de verdade: atraímos quem acredita no que você acredita</li>
-      </ul>
-      <blockquote style="margin-top:20px; font-style:italic; color:#3a4d1f;">“Cultivamos marcas vivas que crescem com propósito e coragem.”</blockquote>
+  <div class="site-wrapper">
+<!-- HERO -->
+<section class="hero section--clean">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-branch"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="eyebrow">Agência Estratégica</div>
+      <h1 class="headline">Você pode virar esse jogo <span class="accent">com estratégia e profundidade</span></h1>
+      <p class="hero-sub">Com alguém do seu lado, sua marca pode ser incrível e única. Mas se ninguém enxergar isso — ela não vende. Nós transformamos essência em vendas.</p>
+      <div class="hero-cta">
+        <a class="cta-btn" href="https://wa.me/5511999999999">🧡 Quero conversar</a>
+        <a class="cta-btn secondary" href="#servicos">Ver serviços</a>
+      </div>
     </div>
-
-    <!-- Imagem à direita -->
-    <div class="imagem" style="flex:0 0 300px; text-align:center;">
-      <img src="lobo.png" alt="Time Lobeira" style="width:100%; max-width:300px; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+    <div class="hero-art" aria-hidden="true">
+      <div class="mockup"><img src="logo.png" alt="Mockup Lobeira"></div>
     </div>
+  </div>
+</section>
 
+<!-- PROBLEMAS -->
+<section class="section--neutral" id="problemas">
+  <div class="section-inner container fade-slide">
+    <h2>O problema que a maioria ignora</h2>
+    <p class="lead">Falar com todo mundo = não conectar com ninguém. Só existe venda com conexão. E só existe conexão com verdade.</p>
+    <div class="problema">
+      <p>Se sua marca não comunica com verdade, ela não vende — ponto.</p>
+      <div class="problema-icons">
+        <div class="pill">👥 Time que mergulha no seu universo</div>
+        <div class="pill">⏱️ Entrega rápida, processo profundo</div>
+        <div class="pill">📉 Enquanto você posta por postar, seus concorrentes vendem</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="section--accent" id="servicos">
+  <div class="section-inner container fade-slide">
+    <h2 class="heading-underline">🎯 O que oferecemos</h2>
+    <p class="lead" style="color:rgba(255,255,255,0.9);">Soluções criativas com metodologia — do conceito ao crescimento mensurável.</p>
+    <div class="servicos-grid" id="servicos-grid">
+      <div class="servico-card"><div class="icon">🎨</div><h3>Branding Estratégico</h3><p>Marcas que contam histórias, com arquitetura de posicionamento e identidade autoral.</p></div>
+      <div class="servico-card"><div class="icon">🧭</div><h3>Consultoria de Negócio</h3><p>Alinhamento entre produto, audiência e oferta para aumentar conversão e ticket médio.</p></div>
+      <div class="servico-card"><div class="icon">📱</div><h3>Gestão de Mídias</h3><p>Conteúdo com propósito para construir audiência qualificada e percepção de valor.</p></div>
+      <div class="servico-card"><div class="icon">🎥</div><h3>Produção Audiovisual</h3><p>Vídeos que comunicam sentimento e vendem, desde roteiro até finalização.</p></div>
+      <div class="servico-card"><div class="icon">📈</div><h3>Tráfego com Propósito</h3><p>Campanhas orientadas por dados e criativos que convertem com custo eficiente.</p></div>
+      <div class="servico-card"><div class="icon">🤝</div><h3>Suporte e Estratégia</h3><p>Parceiros contínuos para testar, otimizar e escalar resultados.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="section--neutral">
+  <div class="section-inner container fade-slide">
+    <h2 class="heading-underline">Resultados que falam</h2>
+    <p class="lead">Casos reais, impacto real. Trabalhamos com métricas e estética.</p>
+    <ul style="list-style:none; max-width:900px; margin:10px auto 14px; color:#2a3b25;">
+      <li>• Mais de R$65.000 faturados com apenas R$1.000 em anúncios</li>
+      <li>• Clientes que elogiam estética, sensibilidade e conversão</li>
+      <li>• Processo transparente, taxa de refação quase zero</li>
+      <li>• Time com influenciadora, ilustradora e estrategista experientes</li>
+    </ul>
+    <div class="depoimentos-grid">
+      <div class="depo-card"><img src="antes-depois1.png" alt="Antes e depois 1"><small>Cliente X • +320% vendas</small></div>
+      <div class="depo-card"><img src="antes-depois2.png" alt="Antes e depois 2"><small>Cliente Y • Lançamento escalado</small></div>
+      <div class="depo-card"><img src="depoimento1.png" alt="Depoimento"><small>Depoimento real</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- FILOSOFIA -->
+<section class="section--neutral">
+  <div class="section-inner container fade-slide">
+    <h2 class="heading-underline">Nossa filosofia</h2>
+    <div class="filosofia">
+      <p>Diferente não é só a estética. É o processo. É a entrega. É o resultado.</p>
+      <p>Sem estratégia, sem essência, sem alma? As vendas caem. O cliente some. O negócio trava.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMO AJUDA -->
+<section class="section--neutral">
+  <div class="section-inner container fade-slide">
+    <div class="ajuda-content">
+      <div>
+        <h2 class="heading-underline">Como a Lobeira pode ajudar sua marca</h2>
+        <ul>
+          <li>✨ Branding com alma e estratégia: marcas memoráveis com propósito</li>
+          <li>🗣️ Tom de voz autêntico: mensagens que conectam</li>
+          <li>🎨 Identidade visual com verdade: designs autorais e estética que expressa sua essência</li>
+          <li>💡 Conteúdo que conecta: atraímos quem acredita no que você acredita</li>
+        </ul>
+        <blockquote>“Cultivamos marcas vivas que crescem com propósito e coragem.”</blockquote>
+        <div style="margin-top:20px;"><a class="cta-btn" href="https://wa.me/5562997013854">Quero conversar</a></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;">
+        <img src="lobo.png" alt="Time Lobeira" style="border-radius:18px; box-shadow:0 18px 40px rgba(17,18,16,0.06);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-inner">
+    <h2>Quer levar sua marca a outro nível?</h2>
+    <p>Raízes e asas — estratégia que coloca propósito em resultado.</p>
+    <a class="cta-btn" href="https://wa.me/5562997013854">🧡 Quero conversar</a>
+    <div class="contact-links">
+      <a href="https://instagram.com/olobeira" target="_blank"><i class="fab fa-instagram"></i>@olobeira</a>
+      <a href="mailto:email@lobeira.com"><i class="fas fa-envelope"></i>email@lobeira.com</a>
+    </div>
   </div>
 </section>
 
 
-<!-- CTA Final -->
-<section class="cta-final fade-slide">
-  <h2>E se a sua marca deixasse de ser só mais uma e virasse uma causa viva, com raízes e asas?</h2>
-  <a href="https://wa.me/5562997013854" class="cta-btn-footer">Quero conversar</a>
+<!-- FOOTER FIXO -->
+<div class="footer-fixo">🧡 Somos raiz e flor. Somos presença e potência. Somos Lobeira!</div>
 
-  <!-- Contato como texto -->
-  <p style="margin-top:30px; font-weight:bold; font-size:1rem; color:#2A5613;">
-    📸 @lobeira &nbsp; | &nbsp; 📧 contato@lobeira.com
-  </p>
-</section>
-
-
-<!-- Footer -->
-<div class="footer-fixo">
-  <p>🧡 Somos raiz e flor. Somos presença e potência. Somos Lobeira!
-  </p>
-</div>
-
+<!-- Scripts -->
 <script>
-// Fade-in ao rolar a página
-const faders = document.querySelectorAll('.fade-slide');
-const appearOptions = { threshold:0.1, rootMargin:"0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver((entries, observer)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    }
-  });
-}, appearOptions);
-faders.forEach(fader => appearOnScroll.observe(fader));
+(function(){
+  const observerOptions = { threshold: 0.12, rootMargin: "0px 0px -40px 0px" };
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+        const cards = entry.target.querySelectorAll('.servico-card');
+        if(cards.length){
+          cards.forEach((c,i)=>setTimeout(()=>c.classList.add('in-view'),i*80));
+        }
+        obs.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  document.querySelectorAll('.fade-slide').forEach(el=>io.observe(el));
+})();
+document.addEventListener("DOMContentLoaded", () => {
+  const faders = document.querySelectorAll('.fade-slide');
+  faders.forEach(fader => { if(fader.getBoundingClientRect().top < window.innerHeight) fader.classList.add('show'); });
+});
 </script>
-
+</div>
 </body>
 </html>
