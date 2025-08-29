@@ -27,6 +27,65 @@
   opacity:0.2;
 }
 
+/* ========= Seção Como Ajuda ========= */
+.ajuda-section .section-inner {
+  background: rgba(255,255,255,0.95); /* mantém fundo translúcido */
+  border-radius: 24px;
+  padding: 60px 40px;
+  box-shadow: 0 18px 48px rgba(17,18,16,0.08), 0 0 12px rgba(42,86,19,0.1);
+}
+
+.ajuda-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.ajuda-content ul {
+  list-style: none;
+  padding-left: 14px;
+  line-height: 1.8;
+  font-weight: 600;
+  color: #21311f;
+}
+
+.ajuda-content li::marker {
+  color: #2A5613; /* detalhe verde nos bullets */
+}
+
+.ajuda-content blockquote {
+  border-left: 4px solid #2A5613;
+  padding-left: 16px;
+  font-style: italic;
+  color: #20321e;
+  margin: 20px 0;
+}
+
+.ajuda-img img {
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(17,18,16,0.06);
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Botão com contraste */
+.ajuda-cta .cta-btn {
+  background: linear-gradient(135deg, #2A5613 0%, #48A34D 100%);
+  color: #fff;
+  padding: 16px 32px;
+  font-weight: 700;
+  border-radius: 14px;
+  display: inline-block;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.ajuda-cta .cta-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 22px 50px rgba(42,86,19,0.3);
+}
+
+
   body::after{
     content:"L O B E I R A";
     position:fixed;
@@ -52,6 +111,56 @@
   justify-content: center;
   gap: 60px;
 }
+
+/* ========= Verde escuro nos títulos ========= */
+section:not(.hero.section--clean) .section-inner h2,
+section:not(.hero.section--clean) .section-inner h3 {
+  color: #2A5613; /* verde escuro */
+}
+
+/* ========= Verde escuro para palavras-chave dentro de parágrafos ========= */
+section:not(.hero.section--clean) .section-inner p span,
+section:not(.hero.section--clean) .section-inner p strong {
+  color: #2A5613;
+  font-weight: 600;
+}
+
+/* ========= Verde escuro em bullets / pills ========= */
+section:not(.hero.section--clean) .section-inner .pill {
+  color: #2A5613;
+  border-left: 4px solid rgba(42,86,19,0.5);
+}
+
+/* ========= Verde escuro nos leads / frases de impacto ========= */
+section:not(.hero.section--clean) .section-inner .lead {
+  color: #2A5613;
+  font-weight: 600;
+}
+
+/* ========= Verde escuro nos cards de serviços ========= */
+.servicos-grid .servico-card h3 {
+  color: #2A5613 !important; /* força o verde escuro nos títulos */
+}
+
+.servicos-grid .servico-card p {
+  color: #2A5613 !important; /* força verde nos textos */
+}
+
+.servicos-grid .servico-card p span {
+  color: #2A5613;
+  font-weight: 600;
+}
+
+.servico-card, .pill {
+  border-left: 4px solid rgba(42,86,19,0.5); /* verde escuro translúcido */
+  border-radius: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.servico-card:hover, .pill:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(17,18,16,0.08);
+}
+
 
   .hero::after{
     content:"";
@@ -159,6 +268,42 @@
     padding:16px 0; text-align:center; font-weight:600; box-shadow:0 -4px 20px rgba(17,18,16,0.18); z-index:999;
   }
 
+/* ===== Roxo mais forte para todas as sections, exceto hero e cta-final ===== */
+section:not(.hero.section--clean):not(.cta-final) .section-inner {
+  background: linear-gradient(135deg, #ac84d6 0%, #8A40CC 100%); /* roxo mais intenso */
+  color: #fff;
+  padding: 90px 6%;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 28px 80px rgba(0,0,0,0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ajuste do ::before para dar leveza ao gradiente */
+section:not(.hero.section--clean):not(.cta-final) .section-inner::before {
+  content: "";
+  position: absolute;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(255,188,46,0.15), transparent 70%);
+  top: -80px; left: -80px;
+  border-radius: 50%;
+}
+
+/* Textos mais claros dentro do fundo roxo */
+section:not(.hero.section--clean):not(.cta-final) .section-inner h2,
+section:not(.hero.section--clean):not(.cta-final) .section-inner h3 {
+  color: #fff;
+}
+
+section:not(.hero.section--clean):not(.cta-final) .section-inner p,
+section:not(.hero.section--clean):not(.cta-final) .section-inner li {
+  color: rgba(255,255,255,0.95);
+}
+
   /* ========= Responsividade ========= */
 /* ===== Ajustes mobile ===== */
 @media (max-width: 768px) {
@@ -166,7 +311,9 @@
   .container {
     padding: 0 16px;
   }
-
+  .hero-branch{
+    display: none;
+  }
   /* Hero */
   .hero {
     padding: 60px 16px; /* topo e base menores */
@@ -268,20 +415,26 @@
   blockquote{ border-left:4px solid rgba(138,64,204,0.18); padding-left:18px; color:#2b401f; margin-top:18px; font-style:italic; }
 
   .cta-final {
-  background: linear-gradient(135deg, #8A40CC, #F68437);
+  background: linear-gradient(135deg, #8A40CC 0%, #F68437 100%);
   color: #fff;
-  padding: 80px 5%;
-  border-radius: 24px;
+  padding: 90px 6%;
+  border-radius: 32px;
   display: flex;
   justify-content: center;
+  text-align: center;
+  box-shadow: 0 28px 80px rgba(0,0,0,0.18);
   position: relative;
-  z-index: 1;
-  box-shadow: 0 25px 70px rgba(0,0,0,0.12);
   overflow: hidden;
-  max-width: 100%;
-  box-sizing: border-box;
 }
 
+.cta-final::before {
+  content: "";
+  position: absolute;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(255,188,46,0.25), transparent 70%);
+  top: -80px; left: -80px;
+  border-radius: 50%;
+}
 .cta-final .cta-inner {
   max-width: 900px;
   width: 100%;
@@ -308,10 +461,11 @@
 .cta-final .cta-btn {
   padding: 18px 36px;
   border-radius: 14px;
+  font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.3px;
   box-shadow: 0 14px 42px rgba(246,132,55,0.16);
-  background: #FF7F50;
+  background: #F68437;
   color: #fff;
   text-decoration: none;
   transition: transform .25s ease, box-shadow .25s ease;
@@ -320,6 +474,8 @@
 .cta-final .cta-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 22px 60px rgba(246,132,55,0.22);
+  background: #2A5613;
+  transform: scale(1.05);
 }
 
 .cta-final .contact-links {
@@ -437,8 +593,7 @@
   </div>
 </section>
 
-<!-- COMO AJUDA -->
-<section class="section--neutral">
+<section class="section--neutral ajuda-section">
   <div class="section-inner container fade-slide">
     <div class="ajuda-content">
       <div>
@@ -450,14 +605,17 @@
           <li>💡 Conteúdo que conecta: atraímos quem acredita no que você acredita</li>
         </ul>
         <blockquote>“Cultivamos marcas vivas que crescem com propósito e coragem.”</blockquote>
-        <div style="margin-top:20px;"><a class="cta-btn" href="https://wa.me/5562997013854">Quero conversar</a></div>
+        <div class="ajuda-cta">
+          <a class="cta-btn" href="https://wa.me/5562997013854">🧡 Quero conversar</a>
+        </div>
       </div>
-      <div style="display:flex;align-items:center;justify-content:center;">
-        <img src="lobo.png" alt="Time Lobeira" style="border-radius:18px; box-shadow:0 18px 40px rgba(17,18,16,0.06);">
+      <div class="ajuda-img">
+        <img src="lobo.png" alt="Time Lobeira">
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- CTA FINAL -->
 <section class="cta-final">
@@ -466,7 +624,7 @@
     <p>Raízes e asas — estratégia que coloca propósito em resultado.</p>
     <a class="cta-btn" href="https://wa.me/5562997013854">🧡 Quero conversar</a>
     <div class="contact-links">
-      <a href="https://instagram.com/olobeira" target="_blank"><i class="fab fa-instagram"></i>@olobeira</a>
+      <a href="https://instagram.com/oilobeira" target="_blank"><i class="fab fa-instagram"></i>@oilobeira</a>
       <a href="mailto:email@lobeira.com"><i class="fas fa-envelope"></i>email@lobeira.com</a>
     </div>
   </div>
@@ -474,7 +632,7 @@
 
 
 <!-- FOOTER FIXO -->
-<div class="footer-fixo">🧡 Somos raiz e flor. Somos presença e potência. Somos Lobeira!</div>
+<div class="footer-fixo">🧡 Somos raiz e flor. Somos presença e potência. Somos Lobeira!🧡</div>
 
 <!-- Scripts -->
 <script>
