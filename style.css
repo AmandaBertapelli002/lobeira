@@ -372,16 +372,31 @@
   .ajuda-content ul{ list-style:none; padding-left:14px; line-height:1.8; font-weight:600; color:#21311f; }
   .ajuda-content li::marker{ color:#8A40CC; }
 
-
-  /* ========= Footer ========= */
-  .footer-fixo{
-    position:fixed; bottom:0; left:0; width:100%; background: rgba(42, 86, 19, 0.95); color:#fff;
-    padding:16px 0; text-align:center; font-weight:600; box-shadow:0 -4px 20px rgba(17,18,16,0.18); z-index:999;
+  .footer-fixo {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: 
+      url('SEMENTES.png') center/cover no-repeat,
+      linear-gradient(135deg, rgba(42, 86, 19, 0.95), rgba(42, 86, 19, 0.95));
+    background-blend-mode: lighten; /* ou soft-light / overlay dependendo do efeito */
+    color: #fff;
+    padding: 16px 0;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 -4px 20px rgba(17, 18, 16, 0.18);
+    z-index: 999;
   }
+  
+
+
+  
 
 /* ===== Roxo mais forte para todas as sections, exceto hero e cta-final ===== */
 section:not(.hero.section--clean) .section-inner {
-  background: linear-gradient(120deg, #2A5613, #F68437); /* roxo mais intenso */
+ 
+    background: linear-gradient(135deg, #F68437, #8A40CC); /* roxo mais intenso */
   color: #fff;
   padding: 90px 6%;
   border-radius: 32px;
@@ -498,10 +513,10 @@ section:not(.hero.section--clean):not(.cta-final) .section-inner li {
   blockquote{ border-left:4px solid rgba(138,64,204,0.18); padding-left:18px; color:#2b401f; margin-top:18px; font-style:italic; }
 
   .cta-final {
-    background: linear-gradient(120deg, #2A5613, #F68437);
+background: linear-gradient(120deg, #8A40CC, #2A5613);
   color: #fff;
   padding: 90px 6%;
-  border-radius: 32px;
+  border-radius: 15px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -582,7 +597,7 @@ section:not(.hero.section--clean):not(.cta-final) .section-inner li {
 
 .cta-final .cta-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 22px 60px rgba(246,132,55,0.22); 
+  box-shadow: 0 22px 60px rgba(246,132,55,0.22);
   background: linear-gradient(135deg, #F68437, #8A40CC); /* gradiente mais chamativo */
   transform: scale(1.05);
 }
@@ -617,24 +632,28 @@ section:not(.hero.section--clean):not(.cta-final) .section-inner li {
 
 /* HEADER */
 .site-header {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  z-index: 10000;
-  background-color: #2A5613; 
-}
-
-.site-header .header-inner {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 12px 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 55px; /* ajuste conforme a altura do seu header */
+    background: 
+      url('SEMENTES.png') center/cover no-repeat,
+      linear-gradient(135deg, rgba(42, 86, 19, 0.95), rgba(42, 86, 19, 0.95));
+    background-blend-mode: lighten; /* deixa a imagem mais clarinha */
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    z-index: 10000;
+  }
+  
+  .site-header .header-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 5px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
 
 /* Logo */
 .site-header .logo {
