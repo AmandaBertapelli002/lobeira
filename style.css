@@ -95,28 +95,17 @@
 
 
 
-.falar-agora-btn {
-  position: relative;
-  bottom: 0px;
-  right: 24px;
-  color: #fff;
-  font-weight: 700;
-  font-size: 2.1rem;
-  padding: 0px 14px;
-  border-radius: 50px;
-  text-decoration: none;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: float 2.5s ease-in-out infinite;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
 
-.falar-agora-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-}
+
+.falar-agora-btn img {
+    width: 100%px;  /* largura desejada */
+    height: 45px; /* altura desejada */
+    padding-left: 20px;
+    object-fit: contain;
+    display: block;
+  }
+  
+
 
 /* animação de flutuar */
 @keyframes float {
@@ -654,7 +643,78 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
     justify-content: space-between;
   }
   
+  /* Ajuste para mobile */
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column; /* coloca os elementos em coluna */
+    align-items: center; /* centraliza tudo */
+    text-align: center;
+  }
 
+  .hero-art {
+    order: -1; /* força a logo subir acima do texto */
+    margin-bottom: 20px; /* dá um espaço entre a logo e o texto */
+  }
+
+  .hero-left {
+    width: 100%;
+  }
+
+  .hero-left .hero-cta {
+    flex-direction: column; /* botoes em coluna */
+    gap: 12px; /* espaçamento entre botões */
+  }
+}
+
+
+.nav-menu .menu-item {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .nav-menu .menu-item > a {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #F68437, #8A40CC);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .nav-menu .submenu { 
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-radius: 12px;
+    padding: 8px 0;
+    min-width: 160px;
+    list-style: none; 
+  }
+  
+  .nav-menu .submenu li a {
+    display: block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin: 4px 8px;
+    color: #fff;
+    background: transparent;
+    text-decoration: none;
+    background: linear-gradient(135deg, #F68437, #8A40CC);
+    /* borda delicada */
+  }
+  
+  .nav-menu .menu-item:hover .submenu {
+    display: block; 
+    background: transparent;
+  }
+  
+  .nav-menu .submenu li a:hover {
+    background: linear-gradient(135deg, #F68437, #8A40CC);
+    border-radius: 8px;
+  }
+  
 /* Logo */
 .site-header .logo {
   font-family: 'Clash Display', sans-serif;
