@@ -765,3 +765,49 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
+
+.responsaveis {
+  display: flex;
+  gap: 1px; /* espaço entre fotos */
+  flex-wrap: wrap;
+  margin-top: 32px;
+  padding: 0;
+}
+
+.responsavel {
+  text-align: center;
+  flex: 1 1 2px; /* largura mínima e flexível */
+}
+
+.responsavel img {
+  width: 80%;   /* largura maior */
+  height: 80%px;  /* altura menor para ficar retangular */
+  object-fit: cover;
+  border: 3px solid #F68437; /* borda opcional com cor da marca */
+  border-radius: 0; /* mantém os cantos quadrados */
+}
+
+@media (max-width: 768px) {
+  .responsaveis {
+    display: flex;
+    flex-direction: column; /* empilha */
+    gap: 16px;
+    align-items: center; /* centraliza os itens empilhados */
+    width: 100%; /* garante que ocupe toda a largura */
+    justify-content: center; /* centraliza verticalmente se houver altura */
+  }
+
+  .responsavel {
+    flex: none; /* cada item ocupa só o espaço necessário */
+    width: 100%; /* opcional, para que o item ocupe toda a largura disponível */
+    text-align: center; /* garante que o conteúdo interno fique centralizado */
+  }
+
+  .responsavel img {
+    width: 70%; /* ajusta o tamanho da imagem */
+    max-width: 400px; /* define um limite máximo menor para mobile */
+    height: auto; /* mantém proporção */
+    display: block; /* evita gaps de inline */
+    margin: 0 auto; /* centraliza a imagem */
+  }
+}
