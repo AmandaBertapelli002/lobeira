@@ -380,8 +380,8 @@
   }
 
 /* ===== Roxo mais forte para todas as sections, exceto hero e cta-final ===== */
-section:not(.hero.section--clean):not(.cta-final) .section-inner {
-  background: linear-gradient(135deg, #ac84d6 0%, #8A40CC 100%); /* roxo mais intenso */
+section:not(.hero.section--clean) .section-inner {
+  background: linear-gradient(120deg, #2A5613, #F68437); /* roxo mais intenso */
   color: #fff;
   padding: 90px 6%;
   border-radius: 32px;
@@ -498,7 +498,7 @@ section:not(.hero.section--clean):not(.cta-final) .section-inner li {
   blockquote{ border-left:4px solid rgba(138,64,204,0.18); padding-left:18px; color:#2b401f; margin-top:18px; font-style:italic; }
 
   .cta-final {
-  background: linear-gradient(135deg, #8A40CC 0%, #F68437 100%);
+    background: linear-gradient(120deg, #2A5613, #F68437);
   color: #fff;
   padding: 90px 6%;
   border-radius: 32px;
@@ -582,8 +582,8 @@ section:not(.hero.section--clean):not(.cta-final) .section-inner li {
 
 .cta-final .cta-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 22px 60px rgba(246,132,55,0.22);
-  background: #2A5613;
+  box-shadow: 0 22px 60px rgba(246,132,55,0.22); 
+  background: linear-gradient(135deg, #F68437, #8A40CC); /* gradiente mais chamativo */
   transform: scale(1.05);
 }
 
