@@ -64,8 +64,7 @@
 
 .ajuda-img img {
   border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(17,18,16,0.06);
-  width: 100%;
+  width: 60%;
   max-width: 420px;
 }
 
@@ -426,6 +425,31 @@ section:not(.hero.section--clean):not(.cta-final) .section-inner li {
   position: relative;
   overflow: hidden;
 }
+.cta-final .cta-img {
+  position: absolute;
+  right: 6%;
+  padding-bottom: 30px;
+  bottom: 0;
+  max-width: 280px;
+  width: 25%;
+  transition: transform .3s ease;
+}
+
+.cta-final .cta-img img {
+  width: 100%;
+  display: block;
+}
+
+.cta-final .cta-img:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .cta-final .cta-img {
+    width: 80%;
+    margin-top: 15px;
+  }
+}
 
 .cta-final::before {
   content: "";
@@ -440,6 +464,7 @@ section:not(.hero.section--clean):not(.cta-final) .section-inner li {
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   gap: 24px;
@@ -595,7 +620,6 @@ section:not(.hero.section--clean):not(.cta-final) .section-inner li {
 
 <section class="section--neutral ajuda-section">
   <div class="section-inner container fade-slide">
-    <div class="ajuda-content">
       <div>
         <h2 class="heading-underline">Como a Lobeira pode ajudar sua marca</h2>
         <ul>
@@ -608,16 +632,10 @@ section:not(.hero.section--clean):not(.cta-final) .section-inner li {
         <div class="ajuda-cta">
           <a class="cta-btn" href="https://wa.me/5562997013854">🧡 Quero conversar</a>
         </div>
-      </div>
-      <div class="ajuda-img">
-        <img src="lobo.png" alt="Time Lobeira">
-      </div>
     </div>
   </div>
 </section>
 
-
-<!-- CTA FINAL -->
 <section class="cta-final">
   <div class="cta-inner">
     <h2>Quer levar sua marca a outro nível?</h2>
@@ -627,8 +645,12 @@ section:not(.hero.section--clean):not(.cta-final) .section-inner li {
       <a href="https://instagram.com/oilobeira" target="_blank"><i class="fab fa-instagram"></i>@oilobeira</a>
       <a href="mailto:email@lobeira.com"><i class="fas fa-envelope"></i>email@lobeira.com</a>
     </div>
+    <div class="cta-img">
+      <img src="lobo.png" alt="Time Lobeira">
+    </div>
   </div>
 </section>
+
 
 
 <!-- FOOTER FIXO -->
