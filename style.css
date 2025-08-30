@@ -678,7 +678,7 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
     padding: 8px 20px;
     border-radius: 20px;
     
-  background: linear-gradient(90deg,#3f2354 0%, #8A40CC 100%);
+  background: linear-gradient(90deg,#F68437 0%, #8A40CC 100%);
     color: #fff;
     text-decoration: none;
     font-weight: 600;
@@ -720,12 +720,13 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
   
 /* Logo */
 .site-header .logo {
-  font-family: 'Sacramento', cursive;
-  font-size: 2.0rem; /* ajuste conforme necessidade */
-  color: #F68437; /* cor da marca */
-  text-decoration: none; /* remove underline */
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #F68437;
+  position: relative;
+  font-size: 2.0rem;
   display: inline-block;
-  color: #F68437; /* Laranja */
 }
 
 /* Grupo menu + botão */
@@ -927,13 +928,14 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
   margin-top: 2px;
   border-radius: 2px;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@700;800;900&family=Underscript&family=Sacramento&display=swap');
 .titulo-dramatico .fazendo {
   font-family: 'Underscript', cursive;
   font-weight: 700;
   text-transform: uppercase;
   color: #8A40CC;
 }
+
 
 .titulo-dramatico .sozinha {
   font-family: 'Clash Display', sans-serif;
