@@ -678,7 +678,7 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
     padding: 8px 20px;
     border-radius: 20px;
     
-  background: linear-gradient(90deg,#F68437 0%, #8A40CC 100%);
+  background: linear-gradient(90deg,#3f2354 0%, #8A40CC 100%);
     color: #fff;
     text-decoration: none;
     font-weight: 600;
@@ -900,13 +900,14 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
     margin: 0 auto; /* centraliza a imagem */
   }
 }
+
 .titulo-dramatico {
-  font-family: 'Poppins', sans-serif; /* substituído Underscript */
+  font-family: 'Poppins', sans-serif; /* seguro no Safari */
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
-  letter-spacing: 1px; 
+  letter-spacing: 1px;
   color: #2A5613;
   margin-bottom: 16px;
 }
@@ -930,7 +931,7 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
 }
 
 .titulo-dramatico .fazendo {
-  font-family: 'Poppins', sans-serif; /* substituído Underscript */
+  font-family: 'Poppins', sans-serif; /* seguro, sem cursiva */
   font-weight: 700;
   text-transform: uppercase;
   color: #8A40CC;
