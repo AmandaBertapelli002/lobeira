@@ -361,6 +361,8 @@
   .ajuda-content ul{ list-style:none; padding-left:14px; line-height:1.8; font-weight:600; color:#21311f; }
   .ajuda-content li::marker{ color:#8A40CC; }
 
+
+  
   .footer-fixo {
     position: fixed;
     bottom: 0;
@@ -718,11 +720,12 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
   
 /* Logo */
 .site-header .logo {
-  font-family: 'Clash Display', sans-serif;
-  font-weight: 700;
-  font-size: 1.8rem;
+  font-family: 'Sacramento', cursive;
+  font-size: 2.0rem; /* ajuste conforme necessidade */
+  color: #F68437; /* cor da marca */
+  text-decoration: none; /* remove underline */
+  display: inline-block;
   color: #F68437; /* Laranja */
-  text-decoration: none;
 }
 
 /* Grupo menu + botão */
@@ -788,6 +791,90 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
   border-radius: 0; /* mantém os cantos quadrados */
 }
 
+/* ===== Responsividade para RESULTADOS ===== */
+@media (max-width: 768px) {
+
+  /* Título e subtítulo centralizados e ajustados */
+  #resultados h2 {
+    font-size: 2rem; /* reduz tamanho do título */
+    line-height: 1.2;
+  }
+
+  #resultados p.lead {
+    font-size: 1rem; /* reduz subtítulo */
+    line-height: 1.4;
+  }
+
+  /* Grid de números de impacto */
+  #resultados > .section-inner > div:first-of-type {
+    grid-template-columns: 1fr; /* um item por linha */
+    gap: 16px;
+  }
+
+  /* Grid de depoimentos */
+  .depoimentos-grid {
+    display: flex;
+    flex-direction: column; /* empilha */
+    gap: 16px;
+    align-items: center; /* centraliza os itens empilhados */
+    width: 100%;
+    justify-content: center;
+  }
+
+
+  
+  .depo-card {
+    flex: none; /* ocupa apenas o necessário */
+    width: 90%; /* quase toda a largura da tela */
+    max-width: 320px;
+    
+    margin: 12px auto 12px;
+    text-align: center; /* centraliza o conteúdo */
+    padding: 16px; /* padding menor */
+  }
+
+  .depo-card img {
+    width: 90%; /* ajusta a imagem para mobile */
+    max-width: 280px;
+    height: auto; /* mantém proporção */
+    display: block;
+    margin: 12px auto 12px; /* centraliza e dá espaçamento inferior */
+    border-radius: 12px;
+  }
+}
+
+/* ===== Responsividade para NÚMEROS DE IMPACTO ===== */
+@media (max-width: 768px) {
+  /* Seleciona o grid de números de impacto */
+  #resultados > .section-inner > div:first-of-type {
+    display: grid !important;
+    grid-template-columns: 1fr !important; /* um item por linha */
+    gap: 16px !important; /* espaçamento entre os cards */
+    margin: 0 auto 32px !important; /* centraliza e ajusta margem inferior */
+  }
+
+  /* Ajusta os cards internos */
+  #resultados > .section-inner > div:first-of-type > div {
+    width: 90%; /* ocupa quase toda a largura */
+    max-width: 320px; /* limite máximo */
+    margin: 0 auto; /* centraliza */
+    padding: 16px; /* padding menor para mobile */
+    text-align: center; /* centraliza texto */
+  }
+
+  /* Ajusta títulos e parágrafos dentro dos cards */
+  #resultados > .section-inner > div:first-of-type > div h3 {
+    font-size: 1.6rem; /* menor para mobile */
+  }
+
+  #resultados > .section-inner > div:first-of-type > div p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+
+
 @media (max-width: 768px) {
   .responsaveis {
     display: flex;
@@ -811,4 +898,46 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
     display: block; /* evita gaps de inline */
     margin: 0 auto; /* centraliza a imagem */
   }
+}
+.titulo-dramatico {
+  font-family: 'Underscript', cursive;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 1px; /* ajustado para Safari */
+  color: #2A5613;
+  margin-bottom: 16px;
+}
+
+.titulo-dramatico .sente {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #F68437;
+  position: relative;
+}
+
+.titulo-dramatico .sente::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background-color: #F68437;
+  width: 100%;
+  margin-top: 2px;
+  border-radius: 2px;
+}
+
+.titulo-dramatico .fazendo {
+  font-family: 'Underscript', cursive;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #8A40CC;
+}
+
+.titulo-dramatico .sozinha {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #FF391B;
 }
