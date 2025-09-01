@@ -162,7 +162,7 @@
   }
   
   .hero-inner {
-    margin-top: 10%; 
+    margin-top: 5%; 
     max-width: 1400px;
     width: 100%;
     display: grid;
@@ -175,6 +175,7 @@
   .hero-left {
     max-width: 640px;
     animation: fadeInLeft 1s ease forwards;
+      padding-top: 0;
   }
   
   /* ========= Hero Subtitle ========= */
@@ -468,26 +469,6 @@ section:not(.hero.section--clean):not(.cta-final) .section-inner li {
     gap: 20px;
   }
 
-  /* CTA final */
-  .cta-final {
-    padding: 40px 16px;
-    border-radius: 16px;
-  }
-  .cta-final h2 {
-    font-size: 2rem;
-  }
-  .cta-final p {
-    font-size: 1rem;
-  }
-  .cta-final .cta-btn {
-    width: 100%;
-    padding: 14px 0;
-  }
-  .cta-final .contact-links {
-    flex-direction: column;
-    gap: 12px;
-  }
-
   /* Footer fixo */
   .footer-fixo {
     bottom: 0;
@@ -539,6 +520,7 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
     margin-top: 15px;
   }
 }
+
 
 .cta-final::before {
   content: "";
@@ -901,45 +883,134 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
   }
 }
 
-.titulo-dramatico {
-  font-family: 'Poppins', sans-serif; /* seguro no Safari */
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  text-align: center;
-  letter-spacing: 1px;
-  color: #2A5613;
-  margin-bottom: 16px;
-}
+ .submenu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-.titulo-dramatico .sente {
-  font-family: 'Clash Display', sans-serif;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #F68437;
-  position: relative;
-}
+  .submenu.show {
+    display: block;
+  }
 
-.titulo-dramatico .sente::after {
-  content: '';
-  display: block;
-  height: 3px;
-  background-color: #F68437;
-  width: 100%;
-  margin-top: 2px;
-  border-radius: 2px;
-}
+  .titulo-dramatico {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    color: #364038;
+    font-style: inherit;
+    margin-bottom: 15px;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+  }
+  
+  .titulo-dramatico .palavra {
+    display: inline-block;
+    margin: 0 4px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: entrarPalavra 0.8s forwards;
+  }
+  
+  /* palavras-chave com fonte display, itálico e animação */
+  .titulo-dramatico .sente,
+  .titulo-dramatico .fazendo,
+  .titulo-dramatico .sozinha {
+    font-family: 'Clash Display', sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
 
-.titulo-dramatico .fazendo {
-  font-family: 'Poppins', sans-serif; /* seguro, sem cursiva */
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #8A40CC;
-}
-
-.titulo-dramatico .sozinha {
-  font-family: 'Clash Display', sans-serif;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #F68437;
-}
+  .titulo-dramatico .fazendo {
+    font-family: 'Clash Display', sans-serif;
+    font-style: italic;
+    font-weight: 900;
+    color: #F68437;
+    text-transform: none;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px; /* espaço para o underline */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: entrarPalavra 0.8s forwards;
+    animation-delay: 0.4s;
+  }
+  
+  .titulo-dramatico .fazendo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: #8A40CC;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    /* animação junto com a entrada */
+    animation: underlineEntrada 0.8s forwards;
+    animation-delay: 0.4s;
+  }
+  
+  /* keyframe da entrada da palavra */
+  @keyframes entrarPalavra {
+    0% { opacity: 0; transform: translateY(30px) rotateX(-15deg); }
+    100% { opacity: 1; transform: translateY(0) rotateX(0); }
+  }
+  
+  /* keyframe do sublinhado */
+  @keyframes underlineEntrada {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+  }
+  
+  
+  .titulo-dramatico .sente { color: #8A40CC; animation-delay: 0.2s; }
+  .titulo-dramatico .sozinha { color: #8A40CC; animation-delay: 0.6s; }
+  
+  /* animação de entrada sequencial moderna */
+  @keyframes entrarPalavra {
+    0% { opacity: 0; transform: translateY(30px) rotateX(-15deg); filter: blur(2px); }
+    100% { opacity: 1; transform: translateY(0) rotateX(0); filter: blur(0); }
+  }
+  
+  /* hover divertido e tecnológico */
+  .titulo-dramatico .palavra:hover {
+    text-shadow: 0 0 12px rgba(255, 200, 50, 0.6);
+    transform: scale(1.12) rotate(-2deg);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  /* efeito sutil de “pulsar” contínuo em palavras-chave principais */
+  .titulo-dramatico  {
+    animation: entrarPalavra 0.8s forwards, pulse 2.5s infinite alternate;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1) rotate(0); }
+    50% { transform: scale(1.03) rotate(0.5deg); }
+    100% { transform: scale(1) rotate(0); }
+  }
+  .frase-final {
+    font-family:'Clash Display', sans-serif; 
+    font-size:2rem; 
+    font-weight:800; 
+    text-align:center; 
+    max-width:800px; 
+    font-style: italic;
+    margin:0 auto 20px; 
+    line-height:1.3;
+    color:#fff;
+  }
+  
+  .frase-final span {
+    display: inline-block;
+    border-bottom: 3px solid rgba(246,132,55,0.4); /* sublinhado leve */
+    padding-bottom: 6px; /* espaço entre texto e linha */
+    margin-bottom: 4px; /* espaço entre linhas */
+  }
+  

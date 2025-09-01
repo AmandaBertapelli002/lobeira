@@ -18,3 +18,24 @@
     const faders = document.querySelectorAll('.fade-slide');
     faders.forEach(fader => { if(fader.getBoundingClientRect().top < window.innerHeight) fader.classList.add('show'); });
   });
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".menu-toggle");
+    const submenu = document.querySelector(".submenu");
+
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      submenu.classList.toggle("show");
+    });
+
+    // Fechar se clicar fora
+    document.addEventListener("click", (e) => {
+      if (!toggle.contains(e.target) && !submenu.contains(e.target)) {
+        submenu.classList.remove("show");
+      }
+    });
+  });
+
+
+  
