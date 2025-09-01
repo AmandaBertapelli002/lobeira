@@ -497,7 +497,7 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
 }
 .cta-final .cta-img {
   position: absolute;
-  right: 6%;
+  right: 2%;
   padding-bottom: 30px;
   bottom: 0;
   max-width: 280px;
@@ -557,7 +557,7 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
 .cta-final .cta-btn {
   padding: 18px 36px;
   border-radius: 14px;
-  font-size: 1.1rem;
+  font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 0.3px;
   box-shadow: 0 14px 42px rgba(246,132,55,0.16);
@@ -579,7 +579,7 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
   gap: 28px;
   align-items: center;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.2rem;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -989,6 +989,10 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
   .titulo-dramatico  {
     animation: entrarPalavra 0.8s forwards, pulse 2.5s infinite alternate;
   }
+
+  .cta-final .cta-btn {
+    animation: entrarPalavra 0.1s forwards, pulse 1.0s infinite alternate;
+  }
   
   @keyframes pulse {
     0% { transform: scale(1) rotate(0); }
@@ -1012,5 +1016,17 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
     border-bottom: 3px solid rgba(246,132,55,0.4); /* sublinhado leve */
     padding-bottom: 6px; /* espaço entre texto e linha */
     margin-bottom: 4px; /* espaço entre linhas */
+  }
+  
+
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
   
