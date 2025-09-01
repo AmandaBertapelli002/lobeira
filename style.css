@@ -925,7 +925,7 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
   
   .titulo-dramatico .palavra {
     display: inline-block;
-    text-shadow: 0 0 5px #ffffff, 0 0 20px #8b8783;
+    text-shadow: 0 0 5px #ffffff, 0 0 20px #e2bd79;
     margin: 0 4px;
     opacity: 0;
     transform: translateY(30px);
@@ -942,7 +942,7 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
     letter-spacing: 1px;
     text-shadow: 0 0 0;
 
-    text-shadow: 0 0 5px #ffffff, 0 0 20px #8b8783;
+    text-shadow: 0 0 5px #ffffff, 0 0 20px #e2bd79;
   }
 
   .titulo-dramatico .fazendo {
@@ -1007,7 +1007,7 @@ background: linear-gradient(120deg, #8A40CC, #2A5613);
   
   /* efeito sutil de “pulsar” contínuo em palavras-chave principais */
   .titulo-dramatico  {
-    animation: entrarPalavra 0.8s forwards, pulse 2.5s infinite alternate;
+    animation: entrarPalavra 0.8s forwards, pulse 9.5s infinite alternate;
   }
 
   .cta-final .cta-btn {
